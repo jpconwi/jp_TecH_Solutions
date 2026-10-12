@@ -1,6 +1,6 @@
 # JP Tech Solutions: landing page
 
-Flask landing page for IoT, web, and capstone project services.
+Flask landing page for IoT, robotics, web, and capstone project services.
 
 ## Run locally
 
@@ -15,10 +15,9 @@ Open http://127.0.0.1:5000
 
 ## Change your contact details
 
-Edit `SITE` in `app.py`, or set environment variables:
+The contact button links to Messenger (https://m.me/61592641898901). To change it, edit `SITE` in `app.py` or set the `MESSENGER_URL` environment variable.
 
-- `CONTACT_EMAIL`: your email address
-- `MESSENGER_URL`: your Messenger link (optional, hides the button if empty)
+Robot and website examples live in `ROBOTS` and `SITES` in `app.py`.
 
 ## Push to GitHub
 
@@ -35,7 +34,7 @@ git push -u origin main
 
 1. Go to vercel.com, choose **Add New > Project**, and import the GitHub repo.
 2. Leave the framework preset on **Flask** (Vercel finds `app.py` automatically).
-3. Add `CONTACT_EMAIL` and `MESSENGER_URL` under **Environment Variables**.
+3. Optional: set `MESSENGER_URL` under **Environment Variables** to override the default link.
 4. Click **Deploy**.
 
 Or with the CLI: `npm i -g vercel` then `vercel` inside this folder.
