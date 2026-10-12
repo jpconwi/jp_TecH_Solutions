@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.name }}: IoT, web, and capstone projects</title>
+  <meta name="description" content="{{ site.name }} builds IoT and embedded systems, websites, and capstone projects, with the documentation to defend them.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#top">{{ site.name }}</a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#capstone">Capstone</a>
+      <a href="#contact" class="btn small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>I build the device, the website, and the capstone behind them.</h1>
+        <p class="lead">{{ site.name }} takes on IoT and embedded systems, web projects, and capstone builds for students and small businesses.</p>
+        <div class="actions">
+          <a class="btn" href="#contact">Start a project</a>
+          <a class="btn ghost" href="#services">See what I build</a>
+        </div>
+      </div>
+
+      <div class="monitor" role="img" aria-label="Animated example of sensor readings printing on a serial monitor">
+        <div class="monitor-bar"><span></span><span></span><span></span><b>serial monitor</b></div>
+        <pre id="log" aria-hidden="true"></pre>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h2>What I take on</h2>
+      <div class="service-row">
+        {% for s in services %}
+        <article class="service">
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.text }}</p>
+          <ul>
+            {% for i in s["items"] %}<li>{{ i }}</li>{% endfor %}
+          </ul>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="capstone" class="capstone">
+      <div class="capstone-intro">
+        <h2>Capstone projects you can explain on defense day</h2>
+        <p>You should walk into the panel knowing how every part works. I build with you, document each step, and go through likely questions before the defense.</p>
+      </div>
+      <ol class="steps">
+        {% for title, text in steps %}
+        <li><h3>{{ title }}</h3><p>{{ text }}</p></li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <section class="ideas">
+      <h2>Project ideas to start from</h2>
+      <ul>
+        {% for i in ideas %}<li>{{ i }}</li>{% endfor %}
+      </ul>
+      <p class="note">Have your own idea? Bring it and we'll shape it into something buildable.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Tell me what you're building</h2>
+      <p>Send your idea, your deadline, and your budget. I'll reply with what's realistic and what it would take.</p>
+      <div class="actions">
+        <a class="btn light" href="mailto:{{ site.email }}?subject=Project%20inquiry">Email {{ site.email }}</a>
+        {% if site.messenger %}<a class="btn outline" href="{{ site.messenger }}" rel="noopener">Message on Messenger</a>{% endif %}
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>&copy; <span id="yr">2026</span> {{ site.name }}</span>
+  </footer>
+  <script src="/main.js"></script>
+</body>
+</html>
