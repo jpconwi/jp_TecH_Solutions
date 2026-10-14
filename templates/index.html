@@ -15,8 +15,11 @@
     <a class="brand" href="#top">{{ site.name }}</a>
     <nav aria-label="Main">
       <a href="#services">Services</a>
+      <a href="#iot">IoT</a>
       <a href="#robots">Robots</a>
+      <a href="#vendo">Vendo</a>
       <a href="#websites">Websites</a>
+      <a href="#projects">Projects</a>
       <a href="#capstone">Capstone</a>
       <a href="#contact" class="btn small">Message me</a>
     </nav>
@@ -54,6 +57,21 @@
       </div>
     </section>
 
+    <section id="iot" class="showcase alt">
+      <h2>IoT and embedded examples</h2>
+      <p class="note">Sample builds and wiring plans that show how I plan a device before building it. Final parts depend on your project.</p>
+      <div class="cards">
+        {% for t in iots %}
+        <article class="card">
+          <img class="shot {{ t.fit }}" src="/projects/{{ t.img }}" alt="{{ t.name }}" loading="lazy" width="900" height="900">
+          <h3>{{ t.name }}</h3>
+          <p>{{ t.text }}</p>
+          <ul class="tags">{% for tag in t.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
     <section id="robots" class="showcase">
       <h2>Robots I can build</h2>
       <p class="note">Examples of realistic scopes for a student or small-business budget. Final parts and timeline depend on your requirements.</p>
@@ -66,6 +84,27 @@
             <dt>Typical parts</dt><dd>{{ r.parts }}</dd>
             <dt>Build time</dt><dd>{{ r.time }}</dd>
           </dl>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="vendo" class="showcase">
+      <h2>Vendo machines I build</h2>
+      <p class="note">Carwash, air, and Piso WiFi vendo machines. Casing, coin slot, and timer setup depend on your location and budget.</p>
+      <div class="cards">
+        {% for v in vendos %}
+        <article class="card">
+          {% if v.video %}
+          <video class="shot tall" controls muted loop playsinline preload="metadata" poster="/projects/{{ v.img }}" aria-label="{{ v.name }} demo">
+            <source src="/projects/{{ v.video }}" type="video/mp4">
+          </video>
+          {% else %}
+          <img class="shot tall" src="/projects/{{ v.img }}" alt="{{ v.name }}" loading="lazy" width="800" height="1000">
+          {% endif %}
+          <h3>{{ v.name }}</h3>
+          <p>{{ v.text }}</p>
+          <ul class="tags">{% for tag in v.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
         </article>
         {% endfor %}
       </div>
@@ -85,6 +124,21 @@
           <h3>{{ s.name }}</h3>
           <p>{{ s.text }}</p>
           <ul class="tags">{% for tag in s.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="projects" class="showcase">
+      <h2>Websites I've built</h2>
+      <p class="note">Real systems from past projects. Each one has its own sign in, database, and design.</p>
+      <div class="cards">
+        {% for p in projects %}
+        <article class="card">
+          <img class="shot" src="/projects/{{ p.img }}" alt="{{ p.name }} sign in page" loading="lazy" width="900" height="450">
+          <h3>{{ p.name }}</h3>
+          <p>{{ p.text }}</p>
+          <ul class="tags">{% for tag in p.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
         </article>
         {% endfor %}
       </div>
