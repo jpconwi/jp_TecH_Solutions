@@ -95,6 +95,104 @@ SITES = [
     },
 ]
 
+IOTS = [
+    {
+        "name": "WiFi-controlled devices",
+        "text": "Devices you control or monitor from your phone over WiFi, such as a smart bulb, a temperature display, or a robot car.",
+        "tags": ["WiFi", "Phone control", "Sensors"],
+        "img": "iot-wifi-devices.jpg",
+        "fit": "sq",
+    },
+    {
+        "name": "Obstacle-avoiding robot car",
+        "text": "An Arduino car with an ultrasonic sensor on a servo that looks ahead and steers around obstacles.",
+        "tags": ["Arduino", "Ultrasonic sensor", "Servo"],
+        "img": "obstacle-car.jpg",
+        "fit": "sq",
+    },
+    {
+        "name": "Solar-powered robot: wiring plan",
+        "text": "Wiring plan for a four-motor robot with a Raspberry Pi, soil moisture sensor, GPS module, servos, and a solar-charged battery pack.",
+        "tags": ["Raspberry Pi", "Solar", "GPS"],
+        "img": "solar-robot-wiring.jpg",
+        "fit": "diagram",
+    },
+    {
+        "name": "Bluetooth car: wiring plan",
+        "text": "Wiring plan for a phone-controlled car with an Arduino Uno, HC-05 Bluetooth module, L298N motor driver, and four DC motors.",
+        "tags": ["Arduino Uno", "HC-05", "L298N"],
+        "img": "bluetooth-car-wiring.jpg",
+        "fit": "diagram",
+    },
+]
+
+VENDOS = [
+    {
+        "name": "Air vendo (wooden box)",
+        "text": "Coin-operated tire air station. A coin slot and countdown timer display start the compressor for the time paid.",
+        "tags": ["Coin slot", "Timer display", "Wooden box"],
+        "img": "air-vendo.jpg",
+        "video": "air-vendo-demo.mp4",
+    },
+    {
+        "name": "Carwash vendo: water and shampoo",
+        "text": "Separate water and shampoo units on one post, each with its own hose reel, so customers wash their own vehicle.",
+        "tags": ["Water", "Shampoo", "Hose reels"],
+        "img": "carwash-water-shampoo.jpg",
+    },
+    {
+        "name": "Dual coin slot vendo box",
+        "text": "Two coin slots and two timer displays in one aluminum-frame box, for running two outputs from one unit.",
+        "tags": ["Dual coin slot", "2 timers", "Aluminum frame"],
+        "img": "dual-coin-box.jpg",
+    },
+    {
+        "name": "Piso WiFi vendo",
+        "text": "A coin-operated WiFi unit that sells internet time per coin, in a lockable cabinet.",
+        "tags": ["Piso WiFi", "Coin slot", "Lockable"],
+        "img": "piso-wifi.jpg",
+    },
+]
+
+PROJECTS = [
+    {
+        "name": "LocationTrack",
+        "text": "Real-time GPS tracking and sharing, with sign in and register accounts.",
+        "tags": ["GPS tracking", "User accounts", "Live map"],
+        "img": "locationtrack.jpg",
+    },
+    {
+        "name": "NEMSAI",
+        "text": "An AI campus assistant for NEMSU Tandag students, with school Google account sign in.",
+        "tags": ["AI assistant", "Google sign in", "Campus"],
+        "img": "nemsai.jpg",
+    },
+    {
+        "name": "NEMSU Lost & Found",
+        "text": "A lost and found system for the campus, limited to verified school accounts.",
+        "tags": ["Google sign in", "School accounts only", "Reports"],
+        "img": "lost-and-found.jpg",
+    },
+    {
+        "name": "NEMSUMarket",
+        "text": "A campus marketplace where verified students and staff buy and sell uniforms, books, and supplies.",
+        "tags": ["Marketplace", "Real-time chat", "Verified users"],
+        "img": "nemsumarket.jpg",
+    },
+    {
+        "name": "Conquiz",
+        "text": "A student portal for quizzes, with Google or email sign in.",
+        "tags": ["Student portal", "Google sign in", "Quizzes"],
+        "img": "conquiz.jpg",
+    },
+    {
+        "name": "Potato Corner ordering",
+        "text": "An online ordering site where customers sign in and order their favorite fries.",
+        "tags": ["Online ordering", "Google sign in", "Customer accounts"],
+        "img": "potato-corner.jpg",
+    },
+]
+
 IDEAS = [
     "RFID attendance system",
     "Water level and refill monitor",
@@ -107,7 +205,7 @@ IDEAS = [
 
 @app.route("/")
 def home():
-    return render_template("index.html", site=SITE, services=SERVICES, steps=STEPS, ideas=IDEAS, robots=ROBOTS, sites=SITES)
+    return render_template("index.html", site=SITE, services=SERVICES, steps=STEPS, ideas=IDEAS, robots=ROBOTS, sites=SITES, projects=PROJECTS, vendos=VENDOS, iots=IOTS)
 
 
 @app.route("/healthz")

@@ -85,6 +85,12 @@ footer{padding-top:1.5rem;padding-bottom:1.5rem;color:var(--muted);font-size:.95
 .card dd{margin:.15rem 0 0}
 .tags{list-style:none;padding:0;margin:auto 0 0;display:flex;flex-wrap:wrap;gap:.4rem}
 .tags li{font:400 .8rem var(--mono);padding:.25rem .6rem;border:1px solid var(--line);border-radius:99px;background:var(--white)}
+.shot{display:block;width:100%;height:auto;max-width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;border:1.5px solid var(--ink);border-radius:6px;background:var(--line)}
+.shot.tall{aspect-ratio:4/5;object-position:center;background:var(--ink)}
+.shot.sq{aspect-ratio:4/3;object-fit:contain;background:#fff}
+.shot.diagram{aspect-ratio:4/3;object-fit:contain;background:#fff}
+#projects .cards{grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))}
+@media (min-width:1000px){#projects .cards{grid-template-columns:repeat(3,1fr)}}
 .mock{--a:var(--trace);border:1.5px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--white)}
 .mock.sea{--a:#1B84A8}.mock.amber{--a:var(--signal)}.mock.teal{--a:var(--trace)}.mock.ink{--a:var(--ink)}
 .mock-bar{display:flex;align-items:center;gap:.25rem;padding:.4rem .5rem;background:var(--ink)}
